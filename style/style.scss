@@ -30,6 +30,8 @@ $font: 'Grtsk Peta';
 :root {
     --container: 1360px;
     --fz48: 48px;
+    --fz16: 16px;
+    --fz18: 18px;
     --fz32: 32px;
     --fz21: 21px;
     --fz14: 14px;
@@ -123,8 +125,8 @@ select {
     color: $white;
     text-transform: uppercase;
     &:hover {
-        background-color: $white;
-        color: $black;
+        background-color: $dgrey;
+        color: $white;
     }
     &.white {
         background-color: $white;
@@ -437,6 +439,7 @@ header {
                         .img {
                             background-color: $lgrey;
                             height: 270px;
+                            padding: 45px 25px 55px;
                             img {
                                 object-fit: contain;
                             }
@@ -446,10 +449,61 @@ header {
                             top: 15px;
                             right: 15px;
                         }
+                        .information {
+                            padding-top: 10px;
+                            background-color: $white;
+                            .name-category {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 5px
+                                .name {
+                                    font-size:var(--fz16);
+                                    font-weight: 500;
+                                    text-transform: uppercase;
+                                }
+                                .category {
+                                    color: $dgrey;
+                                    font-weight: 500;
+                                }
+                            }
+                            .price {
+                                font-size: var(--fz18);
+                                font-weight: 500;
+                                display: flex;
+                                gap: 15px;
+                                span {
+                                    display: block;
+                                    &.old {
+                                        position: relative;
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 0%;
+                                            width: 100%;
+                                            height: 2px;
+                                            background-color: $black;
+                                            transform: translateY(-50%);
+                                        }
+                                    }
+                                    &.new {
+                                        color: $red;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
-        }
+            .btn-block {
+                margin-top: 77px;
+                display: flex;
+                justify-content: center;
+                .btn {
+                    width: fit-content;
+                }
+            }
+        }       
     }
 }
 ._title{
